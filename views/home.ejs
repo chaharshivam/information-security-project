@@ -1,0 +1,85 @@
+
+<div class="col-sm-12 col-md-10 col-md-offset-1">
+    <div class="box box-info">
+        <div class="box-header with-border ">
+            <h3 class="box-title">Faculty Information</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+
+        <form class="form-horizontal">
+            <input type="hidden" name="authorizedID" id="authorizedID" value="19BCT0234">
+
+            <div class="box-body">
+
+                <div class="form-group">
+                    <span  class="col-sm-2 control-label"><b>Search by Faculty Name</b></span>
+                    <div class="col-sm-8">
+                        <input type="text" name="query" minlength="1" class="form-control" style="font-size: 1.7rem;" placeholder="Enter the Name" >
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-primary" type="submit" name="action">Search
+                        </button>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <strong></strong>
+                    </div>
+                </div>
+
+
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="4a">
+                        <div class=" table-responsive">
+                            <div style="margin: 20px 20px 20px 20px;">
+                                <table class="table" border="1">
+
+
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <div class="row">
+                        <div class="results-area col s10 offset-s1 grey lighten-3">
+                            <div class="results-load">
+                                <table id="update_table">
+                                    <thead>
+                                    <tr align="center">
+                                        <!-- Static row names, as this is meant to show only data from the products table -->
+                                        <th style="text-align: center">Name</th>
+                                        <th style="text-align: center">Designation</th>
+                                        <th style="text-align: center">School</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+
+                </div>
+
+
+            </div>
+        </form>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<% include partials/footer %>

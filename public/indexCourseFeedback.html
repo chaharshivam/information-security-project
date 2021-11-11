@@ -1,0 +1,832 @@
+<html>
+<head>
+  <!--        <meta charset="UTF-8">-->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Custom CSS-->
+  <link rel="stylesheet" href="/css/main_styles.css">
+
+  <!-- Materialize Icons -->
+  <meta name="description" content="VTOP : An Official VIT, Vellore Web Portal" />
+  <meta name=”robots” content=”NOODP,NOYDIR” />
+  <meta name="keywords" content="VTOP, vtop, SDC,sdc "/>
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta charset="utf-8"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+
+
+  <title>Vellore Institute of Technology (VIT)</title>
+
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>VIT Vellore - VTOP</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="http://localhost:3000/assets/jquery-ui.css"/>
+  <link rel="stylesheet" href="http://localhost:3000/assets/bootstrap.css" />
+  <link rel="stylesheet" href="http://localhost:3000/assets/bootstrapValidator.css"/>
+  <link rel="stylesheet" href="http://localhost:3000/assets/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://localhost:3000/assets/AdminLteCompatibility.css"/>
+  <link rel="stylesheet" href="http://localhost:3000/assets/VTopScrollbar.css"/>
+  <link rel="stylesheet" href="http://localhost:3000/assets/VTop.css"/>
+  <link rel="stylesheet" href="http://localhost:3000/assets/scrollableTable.css" />
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="http://localhost:3000/assets/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+<div id="page_outline">
+  <div id="page-holder" class="trim">
+
+
+    <header>
+
+      <nav class="navbar navbar-default navbar-fixed-top VTopHeader">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <div class="navbar-brand">
+              <button type="button" class="box" id="menu-toggle" onclick="toggleVTopMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              <span>
+						    <!-- page-holder -->
+
+						   </span>
+
+
+
+
+
+              <span class="VITLogoStyle">VIT</span>
+              <span class="VITSubLogoStyle">(Vellore Campus)</span> &nbsp;
+
+              <input type="hidden" name="authorizedID" id="authorizedID" value="19BCT0234">
+              <!-- <button type="button" class="btn btn-default btn-sm" th:onclick="'javascript:goHomePage();'"><span class="glyphicon glyphicon-home"></span></button> -->
+              <!-- <button type="button" th:onclick="'javascript:goHomePage();'"><span style="color:blue" class="glyphicon glyphicon-home"></span></button> -->
+              <a href="javascript:goHomePage();" data-toggle="tooltip" title="Go To Home Page"><span style="color:white" class="glyphicon glyphicon-home"></span></a>
+
+              <script type="text/javascript">
+                function goHomePage()
+                {
+                  var data = "authorizedID="+document.getElementById("authorizedID").value;
+                  ajaxCall("goHomePage",data,"page_outline");
+                }
+              </script>
+
+              <!-- <a id="btnHome" onclick="ajaxCall('goHomePage','authorizedID=15231','page_outline')"><span style="color:white" class="glyphicon glyphicon-home"></span></a> -->
+
+
+
+            </div>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="hidden-xs nav navbar-nav navbar-right" style="margin:auto;">
+              <li>
+                <a data-toggle="dropdown" class="dropdown-toggle small" href="#">
+				                <span class="VTopHeaderStyle"><img src="http://localhost:3000/shivam.png" class="img-circle img_icon_size" alt="User Image">
+				                <span>19BCT0234(STUDENT)</span>
+				                <span><b class="caret"></b></span></span>
+                </a>
+                <ul class="dropdown-menu VTopHeaderMenu">
+                  <li><a href="#" class="text-center"><span><img src="http://localhost:3000/shivam.png" class="img-circle img_stamp_size" alt="User Image"></span></a></li>
+                  <li><a href="#" class="text-center"><span style="white-space: initial;"></span></a></li>
+                  <li>
+                    <div class="btn-group btn-group-justified">
+
+                      <a class="btn btn-success" href="javascript:void(0)" onclick="ajaxCall('processLogout',null,'page_outline')">Sign out</a>
+                    </div></li>
+                </ul>
+              </li>
+            </ul>
+            <!-- <ul class="visible-xs nav navbar-nav navbar-right VTopHeaderMenu"> -->
+            <ul class="visible-xs nav navbar-nav navbar-right VTopHeaderMenu" style="margin:auto;">
+              <li><a href="#" class="text-center"><span><img src="http://localhost:3000/shivam.png" class="img-circle img_stamp_size" alt="User Image"></span></a></li>
+              <li><a href="#" class="text-center"><span style="white-space: initial;" class="VTopHeaderStyle"></span></a></li>
+              <li class="text-center"><span class="VTopHeaderStyle">19BCT0234 (STUDENT)</span></li>
+              <li>
+
+
+                <a class="btn btn-success" href="javascript:void(0)" onclick="ajaxCall('processLogout',null,'page_outline')"><span class="VTopHeaderStyle">Sign out</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <script>
+        $(document).ready(function() {
+          $("body").css("padding-top", $(".navbar-fixed-top").height());
+          /*   				var winHeight=$( window ).height()+150;
+						   $("#button-panel").css("height",winHeight+"px");
+						   $("#sidebar-wrapper").css("height",winHeight+"px");
+		   */ 			});
+
+
+        function toggleVTopMenu() {
+          $("#wrapper").toggleClass("menuDisplayed");
+          if (window.matchMedia('(max-width: 767px)').matches) {
+            $('#button-panel').toggle();
+          }
+        }
+
+        function toggleButtonMenuItem() {
+          if (window.matchMedia('(max-width: 767px)').matches) {
+            $('#button-panel').toggle();
+          }
+        }
+
+
+      </script>
+    </header>
+
+    <input type="hidden" name="authorizedIDX" id="authorizedIDX" value="19BCT0234">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 trim">
+
+
+
+          <div id="wrapper" class="">
+            <div id="sidebar-wrapper" class="hidden-xs nav nav-sidebar">
+              <aside>
+
+
+                <div class="panel panel-default"><div class="panel-heading"></div>  <div id="MenuBody2"><div class="panel-body"> <ul class="nav"><li><a href="javascript:loadmydiv('hrms/contactDetails')">	 <i class="fa fa-phone-square" style="padding-right:12px;"></i>&nbsp;&nbsp; Contact Us</a></li>
+
+                </ul><div class="panel-group" role="tablist" id="accordian0"><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody3" aria-expanded="false">  <i class="fa fa-briefcase" style="width:23px" ;=""></i>&nbsp;&nbsp; My Info </a></h4></div> <div id="MenuBody3" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('studentsRecord/StudentProfileAllView')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Profile</a></li>
+
+                  <li><a href="javascript:loadmydiv('proctor/viewStudentCredentials')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Your Credentials</a></li>
+
+                  <li><a href="javascript:loadmydiv('admissions/dayboarderForMenu')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Dayboarder Info</a></li>
+
+                  <li><a href="javascript:loadmydiv('admissions/AcknowledgmentView')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Acknowledgement View</a></li>
+
+                  <li><a href="javascript:loadmydiv('studentBankInformation/BankInfoStudent')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Student Bank Info</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/examPadCrendentials')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; DigitalPad Device Credentials</a></li>
+
+                  <li><a href="javascript:loadmydiv('alternate/idcard/student/page')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; My Digital ID Card</a></li>
+
+                  <li><a href="javascript:loadmydiv('covid/vaccine/student')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Vaccinated Details</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody4" aria-expanded="false">  <i class="fa fa-info-circle" style="width:23px" ;=""></i>&nbsp;&nbsp; Info Corner </a></h4></div> <div id="MenuBody4" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('academics/common/FaqPreview')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; FAQ</a></li>
+
+                  <li><a href="javascript:loadmydiv('spotlight/spotlightViewOld')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Spotlight </a></li>
+
+                  <li><a href="javascript:loadmydiv('admissions/costCentreCircularsViewPageController')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; View Circular(s)</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody5" aria-expanded="false">  <i class="fa fa-paw" style="width:23px" ;=""></i>&nbsp;&nbsp; Proctor </a></h4></div> <div id="MenuBody5" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('proctor/viewProctorDetails')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; View Proctor Details</a></li>
+
+                  <li><a href="javascript:loadmydiv('proctor/viewMessagesSendByProctor')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; View VTOP Message from Proctor</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody6" aria-expanded="false">  <i class="fa fa-graduation-cap" style="width:23px" ;=""></i>&nbsp;&nbsp; Academics </a></h4></div> <div id="MenuBody6" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('hrms/viewHodDeanDetails')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; HOD and Dean Info</a></li>
+
+                  <li><a href="javascript:loadmydiv('hrms/employeeSearchForStudent')" onclick="javascript:window.location.href='http://localhost:3000'">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Faculty Info</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/StudentClassGrievance')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Course Feedback 24x7</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/BiometricInfo')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Biometric Info</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/StudentClassMessage')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Class Messages</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/council/CouncilRegulationView/new')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Regulation</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/Curriculum')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; My Curriculum</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/additionalLearning/AdditionalLearningStudentView')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Minor/ Honour</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/StudentTimeTable')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Time Table</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/OnlineCOC/StudentOnlineCOC')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Course Option Change</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/CourseWithDraw')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Course Withdraw</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/StudentAttendance')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Class Attendance</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/StudentCoursePage')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Course Page</a></li>
+
+                  <li><a href="javascript:loadmydiv('internship/InternshipRegistration')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Industrial Internship </a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/ProjectView')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Project</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/StudentDA')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Digital Assignment Upload</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/QCMStudentLogin')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; QCM View </a></li>
+
+                  <li><a href="javascript:loadmydiv('set/setRegistrationViewPage')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; SET Conference Registration</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/ExtraCurricular')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Co-Extra Curricular</a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/WishlistStudent')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; WishList Registraion </a></li>
+
+                  <li><a href="javascript:loadmydiv('academics/common/CalendarPreview')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Academic Calendar</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody7" aria-expanded="false">  <i class="fa fa-bank" style="width:23px" ;=""></i>&nbsp;&nbsp; Research </a></h4></div> <div id="MenuBody7" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('research/researchProfile')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; My Research Profile</a></li>
+
+                  <li><a href="javascript:loadmydiv('admissions/semTransactionPageControllerGeneral')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; SEM Request</a></li>
+
+                  <li><a href="javascript:loadmydiv('research/CourseworkRegistration')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Course Work Registration</a></li>
+
+                  <li><a href="javascript:loadmydiv('research/CourseworkRegistrationViewtoScholar')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Registration Status</a></li>
+
+                  <li><a href="javascript:loadmydiv('research/scholarsMeetingView')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Meeting info</a></li>
+
+                  <li><a href="javascript:loadmydiv('research/scholarsAttendanceView')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Attendance view</a></li>
+
+                  <li><a href="javascript:loadmydiv('research/scholar/leave/request')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; ScholarLeave Request</a></li>
+
+                  <li><a href="javascript:loadmydiv('research/researchLettersStudentView')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-file-text" style="padding-right:2px"></i>&nbsp;&nbsp; Research Letters</a></li>
+
+                  <li><a href="javascript:loadmydiv('research/thesisSubmission')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Electronic Thesis Submission</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody8" aria-expanded="false">  <i class="fa fa-book" style="width:23px" ;=""></i>&nbsp;&nbsp; Examination </a></h4></div> <div id="MenuBody8" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('examinations/StudExamSchedule')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Exam Schedule</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/StudentMarkView')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Marks</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/examGradeView/StudentGradeView')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Grades</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/paperSeeing/PaperSeeing')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Paper See/Rev</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/examGradeView/StudentGradeHistory')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Grade History</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/projectFileUpload/ProjectView')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Project File Upload</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/gotToMoocCourseInitial')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; MOOC File upload</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/ecaUpload/viewCourse')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; ECA File Upload</a></li>
+
+                  <li><a href="javascript:loadmydiv('compre/eptScheduleShow')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; EPT schedule</a></li>
+
+                </ul><div class="panel-group" role="tablist" id="accordian2"><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian2" href="#MenuBody9" aria-expanded="false"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp; Comprehensive </a></h4></div> <div id="MenuBody9" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('compre/registrationForm')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Comprehensive Exam</a></li>
+
+                  <li><a href="javascript:loadmydiv('compre/questionPreview')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Question Preview</a></li>
+
+                  <li><a href="javascript:loadmydiv('compre/studentExamInfo')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Exam Information</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian2" href="#MenuBody10" aria-expanded="false"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp; Arrear Details </a></h4></div> <div id="MenuBody10" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                </ul><div class="panel-group" role="tablist" id="accordian3"><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian3" href="#MenuBody11" aria-expanded="false"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp; Regular Arrear </a></h4></div> <div id="MenuBody11" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('examinations/arrearRegistration/RegularArrearStudentReg')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Registration</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/arrearRegistration/LoadRegularArrearViewPage')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Registration Details</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/arrearRegistration/viewRARExamSchedule')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Exam Schedule</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/arrearRegistration/StudentArrearGradeView')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Grade View</a></li>
+
+                  <li><a href="javascript:loadmydiv('examinations/regularArrear/RegularArrearPaperSeeing')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Paper See/Rev</a></li>
+
+                </ul></div></div></div></div></div></div><ul class="nav"><li><a href="javascript:loadmydiv('examinations/reFAT/StudentReFATRequestPageController')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Re-Exam Application</a></li>
+
+                </ul></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody12" aria-expanded="false">  <i class="fa fa-space-shuttle" style="width:23px" ;=""></i>&nbsp;&nbsp; Services </a></h4></div> <div id="MenuBody12" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('pat/PatRegistrationProcess')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Pat Registration</a></li>
+
+                  <li><a href="javascript:loadmydiv('hrms/onlineBookRecommendation')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Online Book Recommendation</a></li>
+
+                  <li><a href="javascript:loadmydiv('alumni/alumniTranscriptPageControl')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Transcript Request</a></li>
+
+                  <li><a href="javascript:loadmydiv('admissions/SpecialAchieversAwards')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Achievements</a></li>
+
+                  <li><a href="javascript:loadmydiv('admissions/programmeMigration')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Programme Migration</a></li>
+
+                  <li><a href="javascript:loadmydiv('hostels/late/hour/student/request/1')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Late Hour Request</a></li>
+
+                  <li><a href="javascript:loadmydiv('vitaa/finalyearcheck')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Final Year Registration</a></li>
+
+                  <li><a href="javascript:loadmydiv('admissions/reserachFresherCertUpload')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Certificate Upload</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody13" aria-expanded="false">  <i class="fa fa-bank" style="width:23px" ;=""></i>&nbsp;&nbsp; Library </a></h4></div> <div id="MenuBody13" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('p2p/studentScanningRequest')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Scanning Request</a></li>
+
+                  <li><a href="javascript:loadmydiv('library/studentScanningRequestKeys')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; My Keys</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody14" aria-expanded="false">  <i class="fa fa-certificate" style="width:23px" ;=""></i>&nbsp;&nbsp; Bonafide </a></h4></div> <div id="MenuBody14" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('others/bonafide/StudentBonafidePageControl')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Apply Bonafide</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody15" aria-expanded="false">  <i class="fa fa-cc-visa" style="width:23px" ;=""></i>&nbsp;&nbsp; Online Payments </a></h4></div> <div id="MenuBody15" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('p2p/Payments')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Payments</a></li>
+
+                  <li><a href="javascript:loadmydiv('finance/getStudentWallet')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Wallet Amount Add</a></li>
+
+                  <li><a href="javascript:loadmydiv('p2p/getReceiptsApplno')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Payment Receipts</a></li>
+
+                  <li><a href="javascript:loadmydiv('finance/getFeesIntimation')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Fees Intimation</a></li>
+
+                  <li><a href="javascript:loadmydiv('finance/getOnlineTransfer')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Online Transfer</a></li>
+
+                  <li><a href="javascript:loadmydiv('p2p/library')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Library</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody16" aria-expanded="false">  <i class="fa fa-home" style="width:23px" ;=""></i>&nbsp;&nbsp; Hostels </a></h4></div> <div id="MenuBody16" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('hostels/room/allotment/info/student/1')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; My Room Information</a></li>
+
+                  <li><a href="javascript:loadmydiv('hostels/student/leave/1')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Leave Request</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody17" aria-expanded="false">  <i class="fa fa-inr" style="width:23px" ;=""></i>&nbsp;&nbsp; Receipt Book </a></h4></div> <div id="MenuBody17" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('finance/ReceiptBookExternalBilling')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; External Billing</a></li>
+
+                  <li><a href="javascript:loadmydiv('finance/getTotstudentReport')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; My Collection Report</a></li>
+
+                  <li><a href="javascript:loadmydiv('finance/ReceiptBookInternalBilling')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Internal Billing</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody18" aria-expanded="false">  <i class="fa fa-book" style="width:23px" ;=""></i>&nbsp;&nbsp; ASC FDP </a></h4></div> <div id="MenuBody18" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('events/ASC/EventsRegistration')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; FDP Registration</a></li>
+
+                  <li><a href="javascript:loadmydiv('events/ASC/EventsCertificateDownload')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Participant Certificate</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody19" aria-expanded="false">  <i class="fa fa-shield" style="width:23px" ;=""></i>&nbsp;&nbsp; Events </a></h4></div> <div id="MenuBody19" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                </ul><div class="panel-group" role="tablist" id="accordian1001"><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian1001" href="#MenuBody20" aria-expanded="false"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp; University Day </a></h4></div> <div id="MenuBody20" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('event/uday/certificates')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; eCertificates</a></li>
+
+                </ul></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody21" aria-expanded="false">  <i class="fa fa-trophy" style="width:23px" ;=""></i>&nbsp;&nbsp; SW Events </a></h4></div> <div id="MenuBody21" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('event/swf/loadRequisitionPage')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Event Requisition</a></li>
+
+                  <li><a href="javascript:loadmydiv('event/swf/loadEventAttendance')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Event Attendance</a></li>
+
+                  <li><a href="javascript:loadmydiv('event/swf/loadEventRegistration')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" style="padding-right:2px"></i>&nbsp;&nbsp; Event Registration</a></li>
+
+                </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" class="text-capitalize" data-parent="#accordian0" href="#MenuBody22" aria-expanded="false">  <i class="glyphicon glyphicon-lock" style="width:23px" ;=""></i>&nbsp;&nbsp; My Account </a></h4></div> <div id="MenuBody22" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                  <li><a href="javascript:loadmydiv('controlpanel/ChangePassword')" >	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-lock" style="padding-right:2px"></i>&nbsp;&nbsp; Change Password</a></li>
+
+                  <li><a href="javascript:loadmydiv('controlpanel/ChangePreferredUser')">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-lock" style="padding-right:2px"></i>&nbsp;&nbsp; Update LoginID</a></li></ul></div></div></div></div>
+
+
+                </div></div></div></aside>
+
+            </div>
+            <div id="button-panel">
+              <aside>
+
+                <script>
+                  /*<![CDATA[*/
+
+                  $(document).ready(function(){
+                    $(".dropdown, .btn-group").hover(function(){
+                      var dropdownMenu = $(this).children(".dropdown-menu");
+                      if(dropdownMenu.is(":visible")){
+                        dropdownMenu.parent().toggleClass("open");
+                      }
+                    });
+                  });
+
+                  $(document).ready(function(){
+
+                    $('a.btn.btn-default.btn-group-justified.dropdown-toggle').on('click', function(e) {
+                      $("div[class='dropdown open']").removeClass('open');
+                      $(this).parent().toggleClass('open');
+                    });
+                  });
+
+
+                  $(document).ready(function(){
+                    $('body').on('click', function (e) {
+                      /*  				 		alert(e.target);
+											   alert($('a.btnList').is(e.target));
+					   */ 					    if (!$('a.btnList').is(e.target)
+                              && $('a.btnList').has(e.target).length === 0
+                              && $('.open').has(e.target).length === 0 ) {
+                        $('a.btn.btn-default.btn-group-justified.dropdown-toggle').parent().removeClass('open');
+                      }
+                    });
+                  });
+
+
+                  /*]]>*/
+                </script>
+
+                <section>
+                  <div class="btn-group-vertical dropright">
+
+
+                    <div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-phone-square"></span></a> <div class="dropdown-menu btnList "><div class="panel panel-default"><div class="panel-body" style="padding-left:25px;font-size:12px;"><ul class="nav"><li><a href="javascript:loadmydiv('hrms/contactDetails')" id="HRM0062" class="btnItem" onclick="toggleButtonMenuItem()">  <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Contact Us</a></li></ul></div></div></div></div>
+
+                    <div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-briefcase"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian1"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;My Info</h4> </div> <div id="BtnBody21112"><div class="panel-body"> <ul class="nav">
+
+                      <li><a href="javascript:loadmydiv('studentsRecord/StudentProfileAllView')" id="STA002" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Profile</a></li>
+
+                      <li><a href="javascript:loadmydiv('proctor/viewStudentCredentials')" id="ADM0218" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Your Credentials</a></li>
+
+                      <li><a href="javascript:loadmydiv('admissions/dayboarderForMenu')" id="ADM0216" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Dayboarder Info</a></li>
+
+                      <li><a href="javascript:loadmydiv('admissions/AcknowledgmentView')" id="ADM0217" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Acknowledgement View</a></li>
+
+                      <li><a href="javascript:loadmydiv('studentBankInformation/BankInfoStudent')" id="FIN0140" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Student Bank Info</a></li>
+
+                      <li><a href="javascript:loadmydiv('examinations/examPadCrendentials')" id="EXM0033" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;DigitalPad Device Credentials</a></li>
+
+                      <li><a href="javascript:loadmydiv('alternate/idcard/student/page')" id="OTH0028" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;My Digital ID Card</a></li>
+
+                      <li><a href="javascript:loadmydiv('covid/vaccine/student')" id="OTH0029" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Vaccinated Details</a></li>
+
+                    </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-info-circle"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian2"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Info Corner</h4> </div> <div id="BtnBody21113"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('academics/common/FaqPreview')" id="ACD0273" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;FAQ</a></li>
+
+                    <li><a href="javascript:loadmydiv('spotlight/spotlightViewOld')" id="CPL0038" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Spotlight </a></li>
+
+                    <li><a href="javascript:loadmydiv('admissions/costCentreCircularsViewPageController')" id="ACD0147" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;View Circular(s)</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-paw"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian3"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Proctor</h4> </div> <div id="BtnBody21114"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('proctor/viewProctorDetails')" id="PRC0001" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;View Proctor Details</a></li>
+
+                    <li><a href="javascript:loadmydiv('proctor/viewMessagesSendByProctor')" id="PRC0002" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;View VTOP Message from Proctor</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-graduation-cap"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian4"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Academics</h4> </div> <div id="BtnBody21115"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('hrms/viewHodDeanDetails')" id="ACD0163" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;HOD and Dean Info</a></li>
+
+                    <li><a href="javascript:loadmydiv('hrms/employeeSearchForStudent')" id="ACD0167" class="btnItem" onclick="toggleButtonMenuItem()" onclick="javascript:window.location.href='http://localhost:3000'"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Faculty Info</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/StudentClassGrievance')" id="ACD0280" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Course Feedback 24x7</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/BiometricInfo')" id="ACD0200" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Biometric Info</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/StudentClassMessage')" id="ACD0152" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Class Messages</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/council/CouncilRegulationView/new')" id="ACD0120" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Regulation</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/Curriculum')" id="ACD0104" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;My Curriculum</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/additionalLearning/AdditionalLearningStudentView')" id="ACD0211" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Minor/ Honour</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/StudentTimeTable')" id="ACD0034" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Time Table</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/OnlineCOC/StudentOnlineCOC')" id="ACD0241" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Course Option Change</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/CourseWithDraw')" id="ACD0236" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Course Withdraw</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/StudentAttendance')" id="ACD0042" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Class Attendance</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/StudentCoursePage')" id="ACD0045" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Course Page</a></li>
+
+                    <li><a href="javascript:loadmydiv('internship/InternshipRegistration')" id="ACD0057" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Industrial Internship </a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/ProjectView')" id="ACD0088" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Project</a></li>
+
+                    <li><a href="javascript:loadmydiv('examinations/StudentDA')" id="EXM0017" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Digital Assignment Upload</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/QCMStudentLogin')" id="ACD0071" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;QCM View </a></li>
+
+                    <li><a href="javascript:loadmydiv('set/setRegistrationViewPage')" id="ACD0059" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;SET Conference Registration</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/ExtraCurricular')" id="ACD0047" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Co-Extra Curricular</a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/WishlistStudent')" id="ACD0079" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;WishList Registraion </a></li>
+
+                    <li><a href="javascript:loadmydiv('academics/common/CalendarPreview')" id="ACD0128" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Academic Calendar</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-bank"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian5"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Research</h4> </div> <div id="BtnBody21116"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('research/researchProfile')" id="RSH0001" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;My Research Profile</a></li>
+
+                    <li><a href="javascript:loadmydiv('admissions/semTransactionPageControllerGeneral')" id="RSH0104" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;SEM Request</a></li>
+
+                    <li><a href="javascript:loadmydiv('research/CourseworkRegistration')" id="RSH0053" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Course Work Registration</a></li>
+
+                    <li><a href="javascript:loadmydiv('research/CourseworkRegistrationViewtoScholar')" id="RSH0054" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Registration Status</a></li>
+
+                    <li><a href="javascript:loadmydiv('research/scholarsMeetingView')" id="RSH0056" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Meeting info</a></li>
+
+                    <li><a href="javascript:loadmydiv('research/scholarsAttendanceView')" id="RSH0055" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Attendance view</a></li>
+
+                    <li><a href="javascript:loadmydiv('research/scholar/leave/request')" id="RSH0068" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;ScholarLeave Request</a></li>
+
+                    <li><a href="javascript:loadmydiv('research/researchLettersStudentView')" id="RSH0111" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-file-text"></i>&nbsp;&nbsp;Research Letters</a></li>
+
+                    <li><a href="javascript:loadmydiv('research/thesisSubmission')" id="RSH0114" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Electronic Thesis Submission</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-book"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian6"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Examination</h4> </div> <div id="BtnBody21117"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('examinations/StudExamSchedule')" id="EXM0006" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Exam Schedule</a></li>
+
+                    <li><a href="javascript:loadmydiv('examinations/StudentMarkView')" id="EXM0011" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Marks</a></li>
+
+                    <li><a href="javascript:loadmydiv('examinations/examGradeView/StudentGradeView')" id="EXM0065" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Grades</a></li>
+
+                    <li><a href="javascript:loadmydiv('examinations/paperSeeing/PaperSeeing')" id="EXM0070" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Paper See/Rev</a></li>
+
+                    <li><a href="javascript:loadmydiv('examinations/examGradeView/StudentGradeHistory')" id="EXM0023" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Grade History</a></li>
+
+                    <li><a href="javascript:loadmydiv('examinations/projectFileUpload/ProjectView')" id="EXM0069" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Project File Upload</a></li>
+
+                    <li><a href="javascript:loadmydiv('examinations/gotToMoocCourseInitial')" id="EXM0172" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;MOOC File upload</a></li>
+
+                    <li><a href="javascript:loadmydiv('examinations/ecaUpload/viewCourse')" id="EXM0046" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;ECA File Upload</a></li>
+
+                    <li><a href="javascript:loadmydiv('compre/eptScheduleShow')" id="VEX0009" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;EPT schedule</a></li>
+
+                    <div class="panel-group" role="tablist" id="BtnAccordian7"><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" data-parent="#BtnAccordian7" class="btnList" href="#BtnBody21118" aria-expanded="false"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Comprehensive</a></h4></div> <div id="BtnBody21118" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                      <li><a href="javascript:loadmydiv('compre/registrationForm')" id="COM0001" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Comprehensive Exam</a></li>
+
+                      <li><a href="javascript:loadmydiv('compre/questionPreview')" id="COM0005" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Question Preview</a></li>
+
+                      <li><a href="javascript:loadmydiv('compre/studentExamInfo')" id="COM0002" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Exam Information</a></li>
+
+                    </ul></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" data-parent="#BtnAccordian7" class="btnList" href="#BtnBody21119" aria-expanded="false"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Arrear Details</a></h4></div> <div id="BtnBody21119" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                      <div class="panel-group" role="tablist"><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" data-parent="#BtnAccordian8" class="btnList" href="#BtnBody21120" aria-expanded="false"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Regular Arrear</a></h4></div> <div id="BtnBody21120" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                        <li><a href="javascript:loadmydiv('examinations/arrearRegistration/RegularArrearStudentReg')" id="EXM0088" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Registration</a></li>
+
+                        <li><a href="javascript:loadmydiv('examinations/arrearRegistration/LoadRegularArrearViewPage')" id="EXM0093" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Registration Details</a></li>
+
+                        <li><a href="javascript:loadmydiv('examinations/arrearRegistration/viewRARExamSchedule')" id="EXM0107" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Exam Schedule</a></li>
+
+                        <li><a href="javascript:loadmydiv('examinations/arrearRegistration/StudentArrearGradeView')" id="EXM0127" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Grade View</a></li>
+
+                        <li><a href="javascript:loadmydiv('examinations/regularArrear/RegularArrearPaperSeeing')" id="EXM0131" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Paper See/Rev</a></li>
+
+                      </ul></div></div></div></div></ul></div></div></div><li><a href="javascript:loadmydiv('examinations/reFAT/StudentReFATRequestPageController')" id="EXM0138" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Re-Exam Application</a></li>
+
+                    </div></ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-space-shuttle"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian8"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Services</h4> </div> <div id="BtnBody21121"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('pat/PatRegistrationProcess')" id="PAT0002" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Pat Registration</a></li>
+
+                    <li><a href="javascript:loadmydiv('hrms/onlineBookRecommendation')" id="LIB0002" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Online Book Recommendation</a></li>
+
+                    <li><a href="javascript:loadmydiv('alumni/alumniTranscriptPageControl')" id="EXM0205" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Transcript Request</a></li>
+
+                    <li><a href="javascript:loadmydiv('admissions/SpecialAchieversAwards')" id="ADM0163" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Achievements</a></li>
+
+                    <li><a href="javascript:loadmydiv('admissions/programmeMigration')" id="ADM0194" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Programme Migration</a></li>
+
+                    <li><a href="javascript:loadmydiv('hostels/late/hour/student/request/1')" id="HSL0143" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Late Hour Request</a></li>
+
+                    <li><a href="javascript:loadmydiv('vitaa/finalyearcheck')" id="ALU0002" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Final Year Registration</a></li>
+
+                    <li><a href="javascript:loadmydiv('admissions/reserachFresherCertUpload')" id="ADM0227" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Certificate Upload</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-bank"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian9"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Library</h4> </div> <div id="BtnBody21122"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('p2p/studentScanningRequest')" id="LIB0005" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Scanning Request</a></li>
+
+                    <li><a href="javascript:loadmydiv('library/studentScanningRequestKeys')" id="LIB0006" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;My Keys</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-certificate"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian10"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Bonafide</h4> </div> <div id="BtnBody21123"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('others/bonafide/StudentBonafidePageControl')" id="OTH0011" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Apply Bonafide</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-cc-visa"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian11"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Online Payments</h4> </div> <div id="BtnBody21124"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('p2p/Payments')" id="FIN0135" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Payments</a></li>
+
+                    <li><a href="javascript:loadmydiv('finance/getStudentWallet')" id="FIN0149" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Wallet Amount Add</a></li>
+
+                    <li><a href="javascript:loadmydiv('p2p/getReceiptsApplno')" id="FIN0136" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Payment Receipts</a></li>
+
+                    <li><a href="javascript:loadmydiv('finance/getFeesIntimation')" id="FIN0137" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Fees Intimation</a></li>
+
+                    <li><a href="javascript:loadmydiv('finance/getOnlineTransfer')" id="FIN0139" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Online Transfer</a></li>
+
+                    <li><a href="javascript:loadmydiv('p2p/library')" id="LIB0001" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Library</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-home"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian12"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Hostels</h4> </div> <div id="BtnBody21125"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('hostels/room/allotment/info/student/1')" id="HSL0019" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;My Room Information</a></li>
+
+                    <li><a href="javascript:loadmydiv('hostels/student/leave/1')" id="HSL0021" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Leave Request</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-inr"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian13"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Receipt Book</h4> </div> <div id="BtnBody21126"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('finance/ReceiptBookExternalBilling')" id="FIN0093" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;External Billing</a></li>
+
+                    <li><a href="javascript:loadmydiv('finance/getTotstudentReport')" id="FIN0098" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;My Collection Report</a></li>
+
+                    <li><a href="javascript:loadmydiv('finance/ReceiptBookInternalBilling')" id="FIN0094" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Internal Billing</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-book"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian14"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;ASC FDP</h4> </div> <div id="BtnBody21127"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('events/ASC/EventsRegistration')" id="EVE0009" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;FDP Registration</a></li>
+
+                    <li><a href="javascript:loadmydiv('events/ASC/EventsCertificateDownload')" id="EVE0010" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Participant Certificate</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-shield"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian15"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;Events</h4> </div> <div id="BtnBody21128"><div class="panel-body"> <ul class="nav">
+
+                    <div class="panel-group" role="tablist" id="BtnAccordian16"><div class="panel panel-default"><div class="panel-heading" role="tab">  <h4 class="menu-title"><a data-toggle="collapse" data-parent="#BtnAccordian16" class="btnList" href="#BtnBody21129" aria-expanded="false"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;University Day</a></h4></div> <div id="BtnBody21129" class="panel-collapse collapse"><div class="panel-body"> <ul class="nav">
+
+                      <li><a href="javascript:loadmydiv('event/uday/certificates')" id="EVE0076" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;eCertificates</a></li>
+
+                    </ul></div></div></div></div></ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="fa fa-trophy"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian17"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;SW Events</h4> </div> <div id="BtnBody21130"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('event/swf/loadRequisitionPage')" id="EVE0080" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Event Requisition</a></li>
+
+                    <li><a href="javascript:loadmydiv('event/swf/loadEventAttendance')" id="EVE0085" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Event Attendance</a></li>
+
+                    <li><a href="javascript:loadmydiv('event/swf/loadEventRegistration')" id="EVE0084" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Event Registration</a></li>
+
+                  </ul></div></div></div></div></div></div><div class="dropdown">	 <a class="btn btn-default btn-group-justified dropdown-toggle " type="button"><span class="glyphicon glyphicon-lock"></span></a> <div class="dropdown-menu btnList "><div class="panel-group" role="tablist" id="BtnAccordian18"><div class="panel panel-default"><div class="panel-heading"> <h4 class="disabled text-capitalize text-center menu-header">&nbsp;&nbsp;My Account</h4> </div> <div id="BtnBody21131"><div class="panel-body"> <ul class="nav">
+
+                    <li><a href="javascript:loadmydiv('controlpanel/ChangePassword')" id="CNTXXX1" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-lock"></i>&nbsp;&nbsp;Change Password</a></li>
+
+                    <li><a href="javascript:loadmydiv('controlpanel/ChangePreferredUser')" id="CNTXXX3" class="btnItem" onclick="toggleButtonMenuItem()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-lock"></i>&nbsp;&nbsp;Update LoginID</a></li></ul></div></div></div></div></div></div>
+
+
+                  </div>
+                </section>
+              </aside>
+            </div>
+
+            <div class="col-md-8 content-center">
+<style>
+  #search-result {
+    display: none;
+  }
+</style>
+
+    <script>
+      function search() {
+        const searchResult = document.getElementById("search-result");
+        const searchTerm = document.getElementById("search-term");
+        const keyword = document.getElementById("keyword");
+
+        const movieData = document.getElementById("movie-data");
+        const comments = document.getElementById("comments");
+
+        movieData.style.visibility = "hidden";
+        comments.style.visibility = "hidden";
+
+        searchResult.style.display = "block";
+
+        searchTerm.innerHTML = keyword.value;
+
+        //fetching results related to the keyword value from the server
+
+        return false;
+      }
+    </script>
+    <section>
+      <h2 style="margin-top:15px">Course Feedback</h2>
+<!--      <form id="search-form" onsubmit="return search()">-->
+<!--        <div class="form-group">-->
+<!--        <input id="keyword" type="text" class="form-control" placeholder="Search a movie"><button type="submit" class="thin">Go</button>-->
+<!--      </div>-->
+<!--      </form>-->
+      <form id="search-form" onsubmit="return search()">
+        <div class="form-group">
+          <input class="form-control" id="keyword" style="font-size: 1.7rem" placeholder="Enter name of Course">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </section>
+
+    <section id="search-result">
+      You searched for <span id="search-term"></span>
+      <p>Waiting for server's response...</p>
+    </section>
+
+    <section id = "comments">
+              <div class="form-group">
+                <div class="col-lg-12" style="cursor:pointer; padding: 0">
+                  <div class="box box-solid" style="margin-bottom:0px; background-color:#d2d6de; ">
+                    <div class="box-header with-border">
+                      <h5 class="col-md-offset-2 box-title" data-widget="collapse" style="font-size: 16px; float: left;">
+			              									<span>
+			              										<span style="margin: 0px;">CSE3501 - Information Security Analysis and Audit</span>
+																<span style="margin: 0px; font-weight: bolder;"> ( Embedded Theory ) </span>
+															</span>
+                      </h5>
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fa fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body" style="display: block;">
+                      <div id="ecolistfrag">
+                        <table class="table table-hover table-bordered results">
+                          <tbody><tr style="background-color: #3c8dbc; color: #fff; border:1px solid #000;font-weight: bolder;">
+                            <td>Class Number</td>
+                            <td>Faculty</td>
+                            <td>Slot</td>
+                            <td>Venue</td>
+                          </tr>
+                          <tr style="color: black; background-color: white; border:1px solid #b2b2b2;">
+                            <td>
+                              <span style="margin: 0px; font-weight:lighter;">VL2021220103875</span>
+                            </td>
+                            <td style="text-align:left; vertical-align: middle;">
+
+                              <p style="margin: 0px; font-weight: bolder;">MURALI S - SCOPE</p>
+
+
+                            </td>
+                            <td>
+                              <span style="margin: 0px; font-weight:lighter;">F2</span>
+                            </td>
+                            <td>
+                              <span style="margin: 0px; font-weight:lighter;">SJT424</span>
+                            </td>
+                          </tr>
+                          </tbody></table>
+                        <br>
+                        <table class="table table-hover table-bordered results" id="viewTables">
+                          <tbody><tr style="color:#fff; font-weight: bolder;background:#3c8dbc;">
+                            <td style="width:90%;">Description</td>
+                            <td colspan="0" style="text-align:center; width:10%; ">Action</td>
+                          </tr>
+                          <form action="http://localhost:3000/coursefeedback" method="GET">
+                          <tr>
+                            <td>
+                              <textarea name="newReview" style="font-size: 1.5rem;" class="form-control" rows="2" cols="30" onblur="textCounter(this,this.form.counter,100);" onkeyup="textCounter(this,this.form.counter,100);" style="resize:none;"></textarea>
+                            </td>
+                            <td style="vertical-align:middle;">
+                              <button type="submit" class="btn btn-success">Submit</button>
+                              </button>
+                            </td>
+                          </tr>
+                          </form>
+                          </tbody></table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    </section>
+<!--      <form action="http://localhost:3000/coursefeedback" method="GET">-->
+<!--        <fieldset>-->
+<!--          <textarea name="newReview" cols="80" rows="5" placeholder="Add your review"></textarea>-->
+<!--          <button type="submit">Submit</button>-->
+<!--        </fieldset>-->
+<!--      </form>-->
+              <h2 style="margin-top:15px">Comments</h2>
+                </hr>
+      <dl style="font-size: 1.5rem;">
+        $reviews$
+      </dl>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="http://localhost:3000/assets/jquery-3.3.1.js"></script>
+<script src="http://localhost:3000/assets/moment.js"></script>
+<script src="http://localhost:3000/assets/jquery.hotkeys.js"></script>
+<script src="http://localhost:3000/assets/jquery.slimscroll.js"></script>
+<script src="http://localhost:3000/assets/jquery.blockUI.js"></script>
+<script src="http://localhost:3000/assets/jquery-ui.js"></script>
+<script src="http://localhost:3000/assets/popper.js"></script>
+<script src="http://localhost:3000/assets/bootstrap.js"></script>
+<script src="http://localhost:3000/assets/bootstrapValidator.js"></script>
+<script src="http://localhost:3000/assets/vtop-validation.js"></script>
+<script type="text/javascript" src="http://localhost:3000/assets/vit-custom.js"></script>
+<script type="text/javascript" src="http://localhost:3000/assets/jquery.validationEngine-en.js" ></script>
+<script type="text/javascript" src="http://localhost:3000/assets/jquery.validationEngine.js" ></script>
+</body>
+</html>
+

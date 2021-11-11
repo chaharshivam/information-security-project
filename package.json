@@ -1,0 +1,20 @@
+{
+  "name": "isaa_project",
+  "version": "1.0.0",
+  "description": "A sample site to demonstrate SQL injection,XSS,cookie theft and phishing attacks for an information security class group project.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shivam Chahar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.22.6"
+  }
+}

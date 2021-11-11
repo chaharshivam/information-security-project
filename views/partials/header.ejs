@@ -1,0 +1,133 @@
+<html>
+<head>
+    <!--        <meta charset="UTF-8">-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="/css/main_styles.css">
+
+    <!-- Materialize Icons -->
+    <meta name="description" content="VTOP : An Official VIT, Vellore Web Portal" />
+    <meta name=”robots” content=”NOODP,NOYDIR” />
+    <meta name="keywords" content="VTOP, vtop, SDC,sdc "/>
+    <base href="https://vtop.vit.ac.in/vtop/"/>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta charset="utf-8"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+
+
+    <title>Vellore Institute of Technology (VIT)</title>
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>VIT Vellore - VTOP</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="http://localhost:3000/assets/jquery-ui.css"/>
+    <link rel="stylesheet" href="http://localhost:3000/assets/bootstrap.css" />
+    <link rel="stylesheet" href="http://localhost:3000/assets/bootstrapValidator.css"/>
+    <link rel="stylesheet" href="http://localhost:3000/assets/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://localhost:3000/assets/AdminLteCompatibility.css"/>
+    <link rel="stylesheet" href="http://localhost:3000/assets/VTopScrollbar.css"/>
+    <link rel="stylesheet" href="http://localhost:3000/assets/VTop.css"/>
+    <link rel="stylesheet" href="http://localhost:3000/assets/scrollableTable.css" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://localhost:3000/assets/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+<div id="page_outline">
+    <div id="page-holder" class="trim">
+
+
+        <header>
+
+            <nav class="navbar navbar-default navbar-fixed-top VTopHeader">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <div class="navbar-brand">
+                            <button type="button" class="box" id="menu-toggle" onclick="toggleVTopMenu()">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <span>
+						    <!-- page-holder -->
+
+						   </span>
+
+
+
+
+
+                            <span class="VITLogoStyle">VIT</span>
+                            <span class="VITSubLogoStyle">(Vellore Campus)</span> &nbsp;
+
+                            <input type="hidden" name="authorizedID" id="authorizedID" value="19BCT0234">
+                            <!-- <button type="button" class="btn btn-default btn-sm" th:onclick="'javascript:goHomePage();'"><span class="glyphicon glyphicon-home"></span></button> -->
+                            <!-- <button type="button" th:onclick="'javascript:goHomePage();'"><span style="color:blue" class="glyphicon glyphicon-home"></span></button> -->
+                            <a href="javascript:goHomePage();" data-toggle="tooltip" title="Go To Home Page"><span style="color:white" class="glyphicon glyphicon-home"></span></a>
+
+                            <script type="text/javascript">
+                                function goHomePage()
+                                {
+                                    var data = "authorizedID="+document.getElementById("authorizedID").value;
+                                    ajaxCall("goHomePage",data,"page_outline");
+                                }
+                            </script>
+
+                            <!-- <a id="btnHome" onclick="ajaxCall('goHomePage','authorizedID=15231','page_outline')"><span style="color:white" class="glyphicon glyphicon-home"></span></a> -->
+
+
+
+                        </div>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="hidden-xs nav navbar-nav navbar-right" style="margin:auto;">
+                            <li>
+                                <a data-toggle="dropdown" class="dropdown-toggle small" href="#">
+				                <span class="VTopHeaderStyle"><img src="http://localhost:3000/shivam.png" class="img-circle img_icon_size" alt="User Image">
+				                <span>19BCT0234(STUDENT)</span>
+				                <span><b class="caret"></b></span></span>
+                                </a>
+                                <ul class="dropdown-menu VTopHeaderMenu">
+                                    <li><a href="#" class="text-center"><span><img src="http://localhost:3000/shivam.png" class="img-circle img_stamp_size" alt="User Image"></span></a></li>
+                                    <li><a href="#" class="text-center"><span style="white-space: initial;"></span></a></li>
+                                    <li>
+                                        <div class="btn-group btn-group-justified">
+
+                                            <a class="btn btn-success" href="javascript:void(0)" onclick="ajaxCall('processLogout',null,'page_outline')">Sign out</a>
+                                        </div></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- <ul class="visible-xs nav navbar-nav navbar-right VTopHeaderMenu"> -->
+                        <ul class="visible-xs nav navbar-nav navbar-right VTopHeaderMenu" style="margin:auto;">
+                            <li><a href="#" class="text-center"><span><img src="http://localhost:3000/shivam.png" class="img-circle img_stamp_size" alt="User Image"></span></a></li>
+                            <li><a href="#" class="text-center"><span style="white-space: initial;" class="VTopHeaderStyle"></span></a></li>
+                            <li class="text-center"><span class="VTopHeaderStyle">19BCT0234 (STUDENT)</span></li>
+                            <li>
+
+
+                                <a class="btn btn-success" href="javascript:void(0)" onclick="ajaxCall('processLogout',null,'page_outline')"><span class="VTopHeaderStyle">Sign out</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+</div>
