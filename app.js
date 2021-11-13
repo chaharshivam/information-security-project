@@ -9,12 +9,35 @@ var express = require('express'),
     mysql = require('mysql'),
     session = require('express-session'),
     fs = require('fs'),
+    limitter = require('express-rate-limit'),
     dbConnection = require('./db/db-connect');
+const RateLimit = require("express-rate-limit");
 
 // Application setup
 app.set('view engine','ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(RateLimit({
+    windowMs: 10000,
+    max: 5,
+    message:{
+        code:429,
+        message: "too many requests",
+    }
+}));
+
+const registerLimitter = limitter({
+    windowsMs: 10000,
+    max: 5
+})
+
+const middlewareToLogOnConsole = function (req,res,next){
+    console.log(req.rateLimit);
+    if(req.rateLimit.remaining === 0){
+        console.log("DOS HAPPENED !!!");
+    }
+    next();
+}
 
 let reviews = [];
 
@@ -34,20 +57,20 @@ dbConnection.connect(function(err) {
 });
 
 //Routing requirements
-app.get('/index', function(req,res){
+app.get('/index',registerLimitter,middlewareToLogOnConsole, function(req,res){
     res.render('indexPage');
 });
 
-app.post('/login', function(req,res){
+app.post('/login',registerLimitter,middlewareToLogOnConsole, function(req,res){
     console.log(`username: ${req.body.uname} , password: ${req.body.passwd}`);
     res.render('signinPage');
 });
-app.get('/login', function(req,res){
+app.get('/login', registerLimitter,middlewareToLogOnConsole, function(req,res){
     console.log(req.body.passwd);
     res.render('loginPage');
 });
 
-app.get('/signin', function(req,res){
+app.get('/signin', registerLimitter,middlewareToLogOnConsole, function(req,res){
     res.render('signinPage');
 });
 app.get('/', function(req,res){
